@@ -677,7 +677,7 @@ products.forEach((product)=>{
                 <div class="product-rating-count link-primary">
                 ${product.rating.count}
                 </div>
-            </div>
+            </div> 
 
             <div class="product-price">
                 $${(product.priceCents/100).toFixed(2)}
@@ -743,9 +743,21 @@ document.querySelectorAll('.js-add-cart')
 
       }
 
+      let cartQuantity=0;
+
+
+      cart.forEach((item)=>{
+        cartQuantity+=item.quantity
+      })
+
+      document.querySelector('.cart-quantity').innerHTML=cartQuantity;
+
+
+      console.log(cartQuantity)
       console.log(cart);
       
     });
 
+   
   });
 
