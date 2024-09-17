@@ -4,11 +4,11 @@ if(!cart) {
   cart = [{
     productId:'04701903-bc79-49c6-bc11-1af7e3651358',
     quantity:4,
-    deliveryoptionId:'1'
+    deliveryOptionId:'1'
   },{
     productId:'58b4fc92-e98c-42aa-8c55-b6b79996769a',
     quantity:1,
-    deliveryoptionId:'2'
+    deliveryOptionId:'2'
   }]; 
 }
 
@@ -52,5 +52,19 @@ const newCart=[];
   });
     cart = newCart;
     saveToStorage();
+  }
+
+export function updateDeliveryOption(productId,deliveryOptionId){
+    let matchingItem;
+
+    cart.forEach((item)=>{
+      if(productId===item.productId){
+        matchingItem=item;
+      }
+    });
+
+    matchingItem.deliveryOptionId=deliveryOptionId; 
+    saveToStorage();
+
   }
   
