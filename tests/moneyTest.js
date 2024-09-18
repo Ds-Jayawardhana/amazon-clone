@@ -16,7 +16,7 @@ console.log('works with 0')
 
 if(formatCurrency(0)=='0.00'){ss
     console.log('passed');sssss
-} else {
+} else {ggggggg
     console.log('failed')
 }
 
